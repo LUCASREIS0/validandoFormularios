@@ -1,10 +1,11 @@
 // Esta função é responsável por validar se a data de nascimento fornecida no campo é de uma pessoa maior de idade.
 export default function ehMaiorDeIdade(campo) {
-    // Cria um objeto Date usando a data de nascimento fornecida no campo.
-    const dataNascimento = new Date(campo.value);
-
-    // Chama a função validaIdade passando a data de nascimento como argumento e imprime o resultado no console.
-    console.log(validaIdade(dataNascimento));
+    // Verifica se o usuário não é maior de idade com base na data de nascimento
+    if (!validaIdade(dataNascimento)) {
+        // Se não for maior de idade, define uma mensagem de erro personalizada para o campo
+        // setCustomValidity é um método que define uma mensagem de erro personalizada para um campo de formulário
+        campo.setCustomValidity('O usuário não é maior de idade');
+    }
 }
 
 // Esta função recebe uma data como entrada e verifica se a pessoa é maior de idade com base na data atual.

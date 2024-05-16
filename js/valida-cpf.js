@@ -5,11 +5,7 @@ export default function ehUmCPF(campo) {
 
     // Verifica se há números repetidos no CPF ou se os dígitos verificadores são inválidos
     if (validaNumerosRepetidos(cpf) || validaPrimeiroDigito(cpf) || validaSegundoDigito(cpf)) {
-        // Se alguma das condições for verdadeira, o CPF é inválido
-        console.log("Esse cpf não existe");
-    } else {
-        // Se todas as condições forem falsas, o CPF é válido
-        console.log("Esse cpf existe");
+        campo.setCustomValidity('Esse cpf não é válido')
     }
 }
 
