@@ -13,6 +13,10 @@ O objetivo deste projeto foi praticar e aprimorar minhas habilidades em JavaScri
 - Personalização de mensagens de erro para diferentes campos do formulário
 - Implementação de feedback visual para indicar campos inválidos
 
+## Versão Hospedada 🌐
+
+Você pode acessar a versão hospedada do projeto através deste link: [Projeto de Validação de Formulários](https://validando-formularios-snowy.vercel.app/)
+
 ## Tecnologias Utilizadas 💻
 
 - HTML5
@@ -32,6 +36,4 @@ O objetivo deste projeto foi praticar e aprimorar minhas habilidades em JavaScri
 Para uma visão mais aprofundada das validações implementadas neste projeto, acesse o repositório do projeto e navegue até a pasta `JS` para examinar os arquivos de script.
 
 
-## Versão Hospedada 🌐
 
-Você pode acessar a versão hospedada do projeto através deste link: [Projeto de Validação de Formulários](https://validando-formularios-snowy.vercel.app/)
