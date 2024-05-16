@@ -2,6 +2,27 @@ import ehUmCPF from "./valida-cpf.js";
 import ehMaiorDeIdade from "./valida-idade.js";
 
 const camposDoFormulario = document.querySelectorAll("[required]");
+const formulario = document.querySelector('[data-formulario]');
+
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault(); // Impede o comportamento padrão de envio do formulário, que é recarregar a página.
+
+    // Coleta os valores dos campos do formulário e armazena em um objeto
+    const listaRespostas = {
+        "nome": e.target.elements["nome"].value,
+        "email": e.target.elements["email"].value,
+        "rg": e.target.elements["rg"].value,
+        "cpf": e.target.elements["cpf"].value,
+        "aniversario": e.target.elements["aniversario"].value,
+    }
+
+    // Armazena os dados coletados do formulário no armazenamento local do navegador
+    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+
+    // Redireciona o navegador para a página "./abrir-conta-form-2.html"
+    window.location.href = "./abrir-conta-form-2.html";
+});
+
 
 camposDoFormulario.forEach((campo)=> {
     campo.addEventListener("blur", () => verificaCampo(campo));
@@ -50,7 +71,7 @@ const mensagens = {
 function verificaCampo(campo) {
     let mensagem = "";
     campo.setCustomValidity('');
-    
+
     // Verifica se o campo tem o atributo 'name' igual a 'cpf' e se o comprimento do valor do campo é maior ou igual a 11
     if (campo.name == "cpf" && campo.value.length >= 11) {
         // Se a condição acima for verdadeira, chama a função ehUmCPF passando o campo como argumento
